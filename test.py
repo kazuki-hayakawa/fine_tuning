@@ -33,8 +33,8 @@ def model_load():
     # 学習済みの重みをロード
     model.load_weights(os.path.join(result_dir, 'finetuning.h5'))
 
-    # 2値分類を指定
-    model.compile(loss='binary_crossentropy',
+    # 多クラス分類を指定
+    model.compile(loss='categorical_crossentropy',
               optimizer=optimizers.SGD(lr=1e-3, momentum=0.9),
               metrics=['accuracy'])
 
